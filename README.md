@@ -1,4 +1,4 @@
-# 🚀 Portafolio Web - Ivan Mejía
+#  Portafolio Web - Ivan Mejía
 
 Este proyecto es un **portafolio personal web** desarrollado con HTML, CSS y JavaScript, diseñado para mostrar información profesional, proyectos, habilidades y una sección interactiva de contacto.
 
