@@ -71,16 +71,30 @@ window.addEventListener("DOMContentLoaded", () => {
   // BOTÓN CAMBIAR TEXTO
   // =========================
   const btnTexto = document.createElement("button");
-  btnTexto.textContent = "Change description";
+btnTexto.textContent = "Change description";
 
-  const info = document.querySelector(".info p");
+const info = document.querySelector(".info p");
 
-  info.insertAdjacentElement("afterend", btnTexto);
+// Guardamos el texto original
+const textoOriginal = info.textContent;
 
-  btnTexto.addEventListener("click", () => {
-    info.textContent =
-      "I am passionate about building interactive and functional web applications.";
-  });
+// Nuevo texto
+const textoNuevo =
+  "I am passionate about building interactive and functional web applications.";
+
+info.insertAdjacentElement("afterend", btnTexto);
+
+// Estado para saber cuál texto está activo
+let cambiado = false;
+
+btnTexto.addEventListener("click", () => {
+  if (cambiado) {
+    info.textContent = textoOriginal;
+  } else {
+    info.textContent = textoNuevo;
+  }
+  cambiado = !cambiado; // alterna entre true y false
+});
 
   // =========================
   //  TOGGLE PROYECTOS
