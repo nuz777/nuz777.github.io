@@ -1,0 +1,38 @@
+
+/* MAIN */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 120px 20px 40px;
+}
+
+/* SECCIONES */
+section {
+    margin-bottom: 60px;
+}
+
+h2 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+/* SOBRE MI */
+.sobre-mi {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.perfil-img {
+    width: 160px;
+    border-radius: 50%;
+}
+
+.info {
+    max-width: 500px;
+}
+
+#typing {
+    color: var(--color-muted);
+    margin: 10px 0;
+}

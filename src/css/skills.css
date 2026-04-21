@@ -1,0 +1,37 @@
+#habilidades {
+  padding: 40px;
+  text-align: center;
+}
+
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card2 {
+  background: var(--color-bg-soft);
+  color: var(--color-white);
+  padding: 20px;
+  width: 250px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card2 i {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.card2:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+   grid-template-columns: repeat(2, 1fr);
+  }
+}

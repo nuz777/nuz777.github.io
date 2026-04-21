@@ -1,65 +1,100 @@
-const frases = [
-        "Soy Aprendiz de desarrollo de software",
-        "Trabajo con Python y Web",
-        "Construyo soluciones funcionales",
-      ];
+// 🚀 Esperar a que cargue todo
+window.addEventListener("DOMContentLoaded", () => {
 
-      let i = 0;
-      let j = 0;
-      let escribiendo = true;
+  // =========================
+  // ✍️ TYPING EFFECT
+  // =========================
+  const frases = [
+    "Soy Aprendiz de desarrollo de software",
+    "Trabajo con Python",
+    "Construyo soluciones funcionales",
+  ];
 
-      function typing() {
-        const elemento = document.getElementById("typing");
+  let i = 0;
+  let j = 0;
+  let escribiendo = true;
 
-        if (escribiendo) {
-          elemento.textContent = frases[i].substring(0, j + 1);
-          j++;
+  const elemento = document.getElementById("typing");
 
-          if (j === frases[i].length) {
-            escribiendo = false;
-            setTimeout(typing, 1200); // pausa cuando termina
-            return;
-          }
-        } else {
-          elemento.textContent = frases[i].substring(0, j - 1);
-          j--;
+  function typing() {
+    if (!elemento) return; // evita error
 
-          if (j === 0) {
-            escribiendo = true;
-            i = (i + 1) % frases.length;
-          }
-        }
+    if (escribiendo) {
+      elemento.textContent = frases[i].substring(0, j + 1);
+      j++;
 
-        setTimeout(typing, escribiendo ? 60 : 30);
+      if (j === frases[i].length) {
+        escribiendo = false;
+        setTimeout(typing, 1200);
+        return;
       }
-      typing();
+    } else {
+      elemento.textContent = frases[i].substring(0, j - 1);
+      j--;
 
-      /* form */
-      document
-        .getElementById("contacto-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          document.getElementById("mensaje-exito").style.display = "block";
-          this.reset();
-        });
+      if (j === 0) {
+        escribiendo = true;
+        i = (i + 1) % frases.length;
+      }
+    }
 
+    setTimeout(typing, escribiendo ? 60 : 30);
+  }
 
+  typing();
 
-const form = document.getElementById("contacto-form");
-const mensaje = document.getElementById("mensaje-exito");
+  // =========================
+  // =========================
+  const form = document.getElementById("contacto-form");
+  const mensaje = document.getElementById("mensaje-exito");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+  mensaje.style.display = "none";
 
-  // Mostrar mensaje
-  mensaje.style.display = "block";
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-  // Ocultar después de 3 segundos
-  setTimeout(() => {
-    mensaje.style.display = "none";
-  }, 3000);
+    mensaje.style.display = "block";
 
-  // Limpiar formulario (opcional)
-  form.reset();
+    setTimeout(() => {
+      mensaje.style.display = "none";
+    }, 3000);
+
+    form.reset();
+  });
+
+  // =========================
+  //  BIENVENIDA
+  // =========================
+  alert("Hola, este es mi portafolio.");
+
+  // =========================
+  // BOTÓN CAMBIAR TEXTO
+  // =========================
+  const btnTexto = document.createElement("button");
+  btnTexto.textContent = "Change description";
+
+  const info = document.querySelector(".info p");
+
+  info.insertAdjacentElement("afterend", btnTexto);
+
+  btnTexto.addEventListener("click", () => {
+    info.textContent =
+      "I am passionate about building interactive and functional web applications.";
+  });
+
+  // =========================
+  //  TOGGLE PROYECTOS
+  // =========================
+  const btnToggle = document.createElement("button");
+  btnToggle.textContent = "Show / Hide Projects";
+
+  const proyectos = document.getElementById("proyectos");
+
+  proyectos.insertAdjacentElement("beforebegin", btnToggle);
+
+  btnToggle.addEventListener("click", () => {
+    proyectos.style.display =
+      proyectos.style.display === "none" ? "block" : "none";
+  });
+
 });
-
