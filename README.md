@@ -16,7 +16,7 @@ El portafolio presenta una interfaz moderna y responsiva que incluye:
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+##  Tecnologías utilizadas
 
 - **HTML5** → Estructura del sitio
 - **CSS3** → Diseño, animaciones y responsive
@@ -67,7 +67,7 @@ Página secundaria con una galería de mascotas:
 
 ---
 
-## 🎨 Estilos (CSS)
+##  Estilos (CSS)
 
 El archivo `style.css` incluye:
 
@@ -96,9 +96,9 @@ El archivo `style.css` incluye:
 
 ---
 
-## ⚙️ Funcionalidades JavaScript
+##  Funcionalidades JavaScript
 
-### ✍️ Efecto Typing (`main.js`)
+###  Efecto Typing (`main.js`)
 
 Simula escritura dinámica en el texto del perfil:
 
@@ -141,7 +141,7 @@ Abre el archivo:
 index.html
 ¡Listo! Puedes visualizar el portafolio en tu navegador.
 
-👨‍💻 Autor
+-Autor
 
 Ivan Mejía
 Desarrollador de software Jr
