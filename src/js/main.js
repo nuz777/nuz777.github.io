@@ -112,3 +112,12 @@ btnTexto.addEventListener("click", () => {
   });
 
 });
+
+
+
+// Cerrar menú al tocar un nav-link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('.menu-toggler').checked = false;
+    });
+});

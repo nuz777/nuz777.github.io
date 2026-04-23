@@ -1,45 +1,110 @@
-/* HEADER */
-header {
+/* NAVBAR */
+.navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
-
-    padding: 15px 30px;
+    color: white;
+    padding: 1rem;
     z-index: 1000;
-
-    transition: background 0.3s ease;
 }
 
-header.scrolled {
-    background: rgba(0, 0, 0, 0.9);
-}
-
-header h1 {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--color-white);
-}
-
-nav ul {
+/* LINKS DESKTOP */
+.nav-links {
     display: flex;
-    gap: 20px;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-nav a {
-    color: #aaa;
+.nav-links li a {
+    color: rgb(137, 137, 137);
     text-decoration: none;
+    padding: 0 1rem;
     transition: 0.3s;
 }
 
-nav a:hover {
-    color: var(--color-white);
+.nav-links li a:hover {
+    color: white;
+}
+
+/* HAMBURGER */
+.menu-toggler {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* ========================= */
+/* 📱 MOBILE */
+/* ========================= */
+@media screen and (max-width: 768px) {
+
+    .hamburger {
+        display: block;
+    }
+
+    /* MENÚ */
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+
+        flex-direction: column;
+        text-align: center;
+
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+
+        /*  CLAVE: NO usar display none */
+        opacity: 0;
+        transform: translateY(-20px);
+        pointer-events: none;
+
+        transition: all 0.3s ease;
+    }
+
+    .nav-links li {
+        padding: 1rem 0;
+    }
+
+    /* ESTADO ABIERTO */
+    .menu-toggler:checked ~ .nav-links {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    /*  ANIMACIÓN HAMBURGER → X */
+    .menu-toggler:checked + .hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggler:checked + .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggler:checked + .hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
 }

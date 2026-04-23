@@ -1,50 +1,110 @@
+/* HABILIDADES */
 #habilidades {
-  padding: 40px;
-  text-align: center;
+    padding: 60px 40px;
+    text-align: center;
 }
 
-
 .cards-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .card2 {
-  background: var(--color-bg-soft);
-  color: var(--color-white);
-  padding: 20px;
-  width: 250px;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card2 i {
-  font-size: 40px;
-  margin-bottom: 10px;
-}
-
-/* Colores específicos */
-.fa-python {
-  color: #3776AB;
-}
-
-.fa-html5 {
-  color: #E34F26;
-}
-
-.fa-js {
-  color: #F7DF1E;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--color-white);
+    padding: 28px 22px 22px;
+    border-radius: 16px;
+    text-align: left;
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .card2:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.18);
 }
 
+/* Icono con fondo */
+.card2-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+}
+
+.python-bg { background: rgba(55, 118, 171, 0.15); }
+.python-bg i { color: #3776AB; }
+
+.html-bg { background: rgba(227, 79, 38, 0.15); }
+.html-bg i { color: #E34F26; }
+
+.js-bg { background: rgba(247, 223, 30, 0.12); }
+.js-bg i { color: #F7DF1E; }
+
+.card2 h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-white);
+}
+
+.card2 p {
+    font-size: 0.82rem;
+    color: #888;
+    margin: 0;
+    line-height: 1.5;
+    flex: 1;
+}
+
+/* Barra de progreso */
+.card2-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 99px;
+    overflow: hidden;
+    margin-top: 6px;
+}
+
+.card2-fill {
+    height: 100%;
+    border-radius: 99px;
+    opacity: 0.85;
+    transition: width 0.6s ease;
+}
+
+.card2-nivel {
+    font-size: 0.72rem;
+    color: #666;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Móvil */
 @media (max-width: 768px) {
-  .cards-container {
-   grid-template-columns: repeat(2, 1fr);
-  }
+    #habilidades {
+        padding: 40px 20px;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .card2 {
+        padding: 22px 18px 18px;
+    }
 }

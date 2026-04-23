@@ -12,30 +12,37 @@
     <title>Ivan Mejia | Portafolio</title>
   </head>
   <body>
-    <header>
-      <h1>Portafolio</h1>
-      <nav>
-        <ul>
-          <li>
-            <a href="https://github.com/nuz777" target="_blank">GitHub</a>
-          </li>
-          <li><a href="mascotas.html">Mascotas</a></li>
-        </ul>
-      </nav>
-    </header>
 
-    <main>
-      <section id="sobre-mi">
+ <nav class="navbar">
+        <h1>Portafolio</h1>
+        <!-- Checkbox oculto para la lógica del menú -->
+        <input type="checkbox" id="menu-toggler" class="menu-toggler">
+        <label for="menu-toggler" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+          <li><a href="#sobre-mi">Inicio</a></li>
+          <li><a href="#proyecto">Proyectos</a></li>
+          <li><a href="#habilidades">Lenguajes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    
+    <main id="sobre-mi">
+      <section >
         <div class="sobre-mi">
           <img
-            src="public/img/Ivan.png"
+            src="public/img/profilecustom.png"
             class="perfil-img"
           />
 
           <div class="info">
             <h2>Ivan Mejia</h2>
             <h3 id="typing"></h3>
-            <p>
+            <p id="proyecto">
               Técnico en desarrollo de software con enfoque en Python, MySQL y
               desarrollo web. Me gusta crear sistemas funcionales, claros y bien
               organizados.
@@ -43,59 +50,87 @@
           </div>
         </div>
       </section>
-
-
       <section id="proyectos">
         <h2><i class="fa-brands fa-github"></i> Proyectos</h2>
-        <ul>
-          <li>
-            <a
-              href="https://github.com/nuz777/inventario.python"
-              target="_blank"
-              >Gestion de inventarios</a
-            >
-          </li>
-          <li>
-            <a href="https://github.com/nuz777/Sau_Nuz" target="_blank"
-              >SauNuz (herramientas de sistemas)</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://github.com/nuz777/project_final"
-              target="_blank"
-              >Lista de Tareas</a
-            >
-          </li>
-        </ul>
+        <div class="proyectos-grid">
+
+          <a href="https://github.com/nuz777/inventario.python" target="_blank" class="proyecto-card">
+            <div class="proyecto-icon"><i class="fa-solid fa-terminal"></i></div>
+            <div class="proyecto-info">
+              <h3>Gestión de inventarios</h3>
+              <p>Sistema de control de stock en Python con MySQL.</p>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square proyecto-arrow"></i>
+          </a>
+
+          <a href="https://github.com/nuz777/Sau_Nuz" target="_blank" class="proyecto-card">
+            <div class="proyecto-icon"><i class="fa-solid fa-terminal"></i></div>
+            <div class="proyecto-info">
+              <h3>SauNuz</h3>
+              <p>Herramientas de sistemas y utilidades de consola.</p>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square proyecto-arrow"></i>
+          </a>
+
+          <a href="https://github.com/nuz777/project_final" target="_blank" class="proyecto-card">
+            <div class="proyecto-icon"><i class="fa-solid fa-list-check"></i></div>
+            <div class="proyecto-info">
+              <h3>Lista de Tareas</h3>
+              <p>App web para gestión de tareas personales.</p>
+          
+              <span id="habilidades"></span>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square proyecto-arrow"></i>
+          </a>
+
+        </div>
       </section>
 
       <section id="habilidades">
-      <h2>Lenguajes que estoy aprendiendo</h2>
+        <h2>Lenguajes que estoy aprendiendo</h2>
 
-      <div class="cards-container">
-        
-        <div class="card2">
-          <i class="fa-brands fa-python"></i>
-          <h3>Python</h3>
-          <p>Aprendiendo desarrollo backend, automatización y lógica.</p>
+        <div class="cards-container">
+
+          <div class="card2">
+            <div class="card2-icon python-bg">
+              <i class="fa-brands fa-python"></i>
+            </div>
+            <h3>Python</h3>
+            <p>Desarrollo backend, automatización y lógica de programación.</p>
+            <div class="card2-bar">
+              <div class="card2-fill" style="width: 60%; background: #3776AB;"></div>
+            </div>
+            <span class="card2-nivel">Intermedio</span>
+          </div>
+
+          <div class="card2">
+            <div class="card2-icon html-bg">
+              <i class="fa-brands fa-html5"></i>
+            </div>
+            <h3>HTML</h3>
+            <p>Estructuras web semánticas, accesibles y bien organizadas.</p>
+            <div class="card2-bar">
+              <div class="card2-fill" style="width: 75%; background: #E34F26;"></div>
+            </div>
+            <span class="card2-nivel">Avanzado</span>
+          </div>
+
+          <div class="card2">
+            <div class="card2-icon js-bg">
+              <i class="fa-brands fa-js"></i>
+            </div>
+            <h3>JavaScript</h3>
+            <p>Interactividad, lógica del navegador y manipulación del DOM.</p>
+            <div class="card2-bar">
+              <div class="card2-fill" style="width: 45%; background: #F7DF1E;"></div>
+            </div>
+            <span class="card2-nivel">Básico</span>
+          </div>
         </div>
+      </section>
 
-        <div class="card2">
-          <i class="fa-brands fa-html5"></i>
-          <h3>HTML</h3>
-          <p>Creación de estructuras web semánticas y accesibles.</p>
-        </div>
 
-        <div class="card2">
-          <i class="fa-brands fa-js"></i>
-          <h3>JavaScript</h3>
-          <p>Interactividad y lógica en el navegador.</p>
-        </div>
-
-      </div>
-    </section>
-
+      
       <section id="contacto">
         <h2>Contacto</h2>
         <form id="contacto-form">
@@ -115,8 +150,11 @@
     </footer>
 
     <script src="src/js/main.js"></script>
+  
 
-
+     <video autoplay muted loop class="bg-video">
+      <source src="/public/videos/videopro.mp4" type="video/mp4">
+     </video>
 
 
   
